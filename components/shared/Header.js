@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Logo from '../../public/images/logo.png'
 
 const Header = () => {
-  console.log(Logo)
+  
   return (
     <header className="bg-red-800 text-white p-4 flex justify-between items-center">
     <div className="flex items-center">

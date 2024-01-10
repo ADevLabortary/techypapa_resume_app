@@ -38,7 +38,9 @@ const HowItWorks = () => {
               Create Your Account Or Login
             </h1>
             <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-              Create an account using Google, Facebook or Your Email. After creating your account you can simply login and then follow the other steps to craft a winning resume.
+              Create an account using Google, Facebook or Your Email. After
+              creating your account you can simply login and then follow the
+              other steps to craft a winning resume.
             </p>
           </div>
         </div>
