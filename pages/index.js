@@ -14,7 +14,7 @@ const Home = () => {
     <div>
       <Header />
       <Hero />
-      <Features/>
+      <Features id='features'/>
       <HowItWorks />
       <Testimonials />
       <FeaturedTemplates/>
