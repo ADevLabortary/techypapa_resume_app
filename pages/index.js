@@ -12,14 +12,14 @@ import Header from '../components/shared/Header';
 const Home = () => {
   return (
     <div>
-      <Header />
+    
       <Hero />
-      <Features id='features'/>
+      <Features />
       <HowItWorks />
       <Testimonials />
       <FeaturedTemplates/>
       <CTA />
-      <Footer />
+     
       {/* Your home page content goes here */}
     </div>
   );

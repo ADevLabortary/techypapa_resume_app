@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import Logo from "../../public/images/logo.png";
+import { useRouter } from "next/router";
 
 const Header = () => {
- 
- 
-
+  const router = useRouter()
+  const {pathname} = router
   return (
     <header className="bg-red-800 text-white p-4 flex justify-between items-center">
       <div className="flex items-center">
@@ -23,6 +23,7 @@ const Header = () => {
               Home
             </Link>
           </li>
+          {pathname ==='/' &&
           <li>
             {/* Use ScrollLink for smooth scrolling to the "Features" section */}
             <ScrollLink
@@ -32,12 +33,13 @@ const Header = () => {
               className="bg-yellow-500 py-3 px-5 rounded-xl cursor-pointer text-black hover:bg-yellow-300 border-2 border-black hover:text-black"
            
             >
-              Features
+           Features
+              
             </ScrollLink>
-          </li>
+          </li>}
           <li>
             <Link 
-              href="/"
+              href="/templates"
               className="bg-yellow-500 py-3 px-5 rounded-xl cursor-pointer text-black hover:bg-yellow-300 border-2 border-black hover:text-black"
             >
               Templates
@@ -45,7 +47,7 @@ const Header = () => {
           </li>
           <li>
             <Link 
-              href="/"
+              href="/pricing"
               className="bg-yellow-500 py-3 px-5 rounded-xl cursor-pointer text-black hover:bg-yellow-300 border-2 border-black hover:text-black"
             >
               Pricing
@@ -53,7 +55,7 @@ const Header = () => {
           </li>
           <li>
             <Link 
-              href="/"
+              href="/blogs"
               className="bg-yellow-500 py-3 px-5 rounded-xl cursor-pointer text-black hover:bg-yellow-300 border-2 border-black hover:text-black"
             >
               Blogs
@@ -61,7 +63,7 @@ const Header = () => {
           </li>
           <li>
             <Link 
-              href="/"
+              href="/dashboard"
               className="bg-purple-600 border-2 border-white py-3 px-5 rounded-xl text-white-600 hover:bg-purple-300 hover:text-black"
             >
               Sign Up

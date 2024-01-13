@@ -4,6 +4,7 @@ export const pricingData = [
     {
       plan: "START",
       price: "Free",
+      planBottomText:"Literally you probably haven't heard of them jean shorts.",
       features: [
         "Vexillologist pitchfork",
         "Tumeric plaid portland",
@@ -13,6 +14,7 @@ export const pricingData = [
     {
       plan: "PRO",
       price: "$38",
+      planBottomText:"Literally you probably haven't heard of them jean shorts.",
       features: [
         "Vexillologist pitchfork",
         "Tumeric plaid portland",
@@ -23,6 +25,7 @@ export const pricingData = [
     {
       plan: "BUSINESS",
       price: "$56",
+      planBottomText:"Literally you probably haven't heard of them jean shorts.",
       features: [
         "Vexillologist pitchfork",
         "Tumeric plaid portland",
@@ -34,6 +37,7 @@ export const pricingData = [
     {
       plan: "SPECIAL",
       price: "$72",
+      planBottomText:"Literally you probably haven't heard of them jean shorts.",
       features: [
         "Vexillologist pitchfork",
         "Tumeric plaid portland",
