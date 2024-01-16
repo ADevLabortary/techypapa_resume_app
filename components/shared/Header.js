@@ -47,14 +47,6 @@ const Header = () => {
           </li>
           <li>
             <Link 
-              href="/pricing"
-              className="bg-yellow-500 py-3 px-5 rounded-xl cursor-pointer text-black hover:bg-yellow-300 border-2 border-black hover:text-black"
-            >
-              Pricing
-            </Link>
-          </li>
-          <li>
-            <Link 
               href="/blogs"
               className="bg-yellow-500 py-3 px-5 rounded-xl cursor-pointer text-black hover:bg-yellow-300 border-2 border-black hover:text-black"
             >
