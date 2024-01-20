@@ -58,7 +58,15 @@ const Header = () => {
               href="/dashboard"
               className="bg-purple-600 border-2 border-white py-3 px-5 rounded-xl text-white-600 hover:bg-purple-300 hover:text-black"
             >
-              Sign Up
+              Login
+            </Link>
+          </li>
+          <li>
+            <Link 
+              href="/dashboard"
+              className="bg-green-500 border-2 border-white py-2 px-5 rounded-xl text-white-600 hover:bg-green-300 hover:text-black"
+            >
+              Join Now
             </Link>
           </li>
         </ul>

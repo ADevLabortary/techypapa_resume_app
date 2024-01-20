@@ -14,13 +14,13 @@ export const templatesData= [
     {
     imgSrc: 'https://dummyimage.com/420x260',
     category: 'ELECTRICAL',
-    name: 'The Catalyzer',
+    name: 'Alrian Yaseen',
     pricing: '$19.00'
 },
     {
-    imgSrc: 'https://dummyimage.com/420x260',
+        imgSrc: 'https://dummyimage.com/420x260',
     category: 'COMPUTER SCIENCE',
-    name: 'The Catalyzer',
-    pricing: '$26.00'
+    name: 'Haider Sultan',
+    pricing: '$66.00'
 }
 ]
