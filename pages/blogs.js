@@ -28,9 +28,16 @@ const Blogs = () => {
                 </div>
                 <div className="md:flex-grow mx-4">
                   <div className="flex flex-col">
-                    <span className="font-semibold text-sm title-font text-gray-700">
+                  <Link
+                    legacyBehavior
+                   
+                    href={`/blogs/${blogData.category.toLowerCase()}`}
+                    key={index}
+                  >
+                    <span className="font-semibold cursor-pointer hover:text-gray-500 text-sm title-font text-gray-700">
                       {blogData.category}
                     </span>
+                    </Link>
                   </div>
                   <Link
                     legacyBehavior
@@ -50,10 +57,10 @@ const Blogs = () => {
                   <div className="flex mt-5">
                     <a
                       className="rounded-lg"
-                      href="https://techypapa.com/author/claude-pearson/"
+                      href={"/author/" + blogData.author}
                     >
                       <img
-                        alt="Avatar photo"
+                        alt={blogData.author}
                         src="http://techypapa.com/wp-content/uploads/2023/12/cropped-claude-40x40.png"
                         srcSet="http://techypapa.com/wp-content/uploads/2023/12/cropped-claude-80x80.png 2x"
                         className="rounded-full"
@@ -64,8 +71,8 @@ const Blogs = () => {
                     </a>
                     <div className="mx-3 font-sans">
                       <div className="font-bold text-black text-md">
-                        <a href="https://techypapa.com/author/claude-pearson/">
-                          Claude Pearson
+                        <a className="hover:text-gray-700" href="https://techypapa.com/author/claude-pearson/">
+                          {blogData.author}
                         </a>
                       </div>
                       <div className="-mt-1 text-sm">
