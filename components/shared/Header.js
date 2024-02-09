@@ -5,6 +5,8 @@ import { useRouter } from "next/router";
 import { FaRegUserCircle, FaUserAlt, FaBars } from "react-icons/fa";
 import { useState } from "react";
 import SignupForm from '../auth/SignupForm'
+import LoginForm from '../auth/LoginForm'
+
 const MobileMenu = ({ isOpen, onClose }) => {
   const router = useRouter();
   const { pathname } = router;
@@ -90,6 +92,7 @@ const Header = () => {
   };
 
   const [isSignupOpen, setIsSignupOpen] = useState(false);
+  const [loginOpen, setLoginOpen] = useState(false)
 
   const toggleSignup = () => {
     setIsSignupOpen(!isSignupOpen);
@@ -169,7 +172,12 @@ const Header = () => {
       <SignupForm
         isOpen={isSignupOpen}
         onClose={() => setIsSignupOpen(false)}
+        loginTrigger={()=>{setLoginOpen}}
       />
+      <LoginForm
+        isLoginOpen={loginOpen}
+        onClose={() => setLoginOpen(false)}
+       />
     </header>
   );
 };
