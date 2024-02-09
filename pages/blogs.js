@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Link from "next/link";
 import { blogsData } from "../constants/blogsData";
 import { FaArrowRight } from "react-icons/fa";
@@ -8,83 +8,80 @@ const Blogs = () => {
   const router = useRouter();
 
   return (
-    <div>
-      <section className="text-gray-600 body-font overflow-hidden">
-        <div className="container px-5 py-24 mx-auto">
-          <div className="-my-8 divide-y-2 divide-gray-100">
-            {blogsData.map((blogData, index) => (
-              <article className="py-8 flex h-72 flex-wrap md:flex-nowrap ">
-                <div className="border-2 border-black overflow-hidden h-full">
-                  <Link
-                    legacyBehavior
-                    href={`/blogs/${blogData.slug.toLowerCase()}`}
-                    key={index}
-                  >
-                    <img
-                      src={blogData.imgSrc}
-                      className="w-full h-full object-cover cursor-pointer transition-transform transform hover:scale-[1.2] hover:opacity-85 md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col  "
-                    ></img>
-                  </Link>
-                </div>
-                <div className="md:flex-grow mx-4">
-                  <div className="flex flex-col">
-                  <Link
-                    legacyBehavior
-                   
-                    href={`/blogs/${blogData.category.toLowerCase()}`}
-                    key={index}
-                  >
-                    <span className="font-semibold cursor-pointer hover:text-gray-500 text-sm title-font text-gray-700">
-                      {blogData.category}
-                    </span>
-                    </Link>
-                  </div>
-                  <Link
-                    legacyBehavior
-                    href={`/blogs/${blogData.slug.toLowerCase()}`}
-                    key={index}
-                  >
-                    <h2 className="text-2xl font-medium text-gray-900 title-font mb-2 hover:text-gray-600 cursor-pointer">
-                      {blogData.blogName}
-                    </h2>
-                  </Link>
-                  <p className="leading-relaxed w-96">
-                    {blogData.blogDesc.length > 100
-                      ? `${blogData.blogDesc.substring(0, 150)}...`
-                      : blogData.blogDesc}
-                  </p>
-
-                  <div className="flex mt-5">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-8">
+        {blogsData.map((blogData, index) => (
+          <article key={index} className="mb-8">
+            <div className="border-2 border-black overflow-hidden">
+              <Link
+                legacyBehaviour
+                href={`/blogs/${blogData.slug.toLowerCase()}`}
+              >
+                <img
+                  src={blogData.imgSrc}
+                  alt={blogData.blogName}
+                  className="w-full h-56 md:h-full object-cover cursor-pointer transition-transform transform hover:scale-[1.2] hover:opacity-85"
+                />
+              </Link>
+            </div>
+            <div className="mt-4">
+              <Link
+                legacyBehaviour
+                href={`/blogs/${blogData.category.toLowerCase()}`}
+                className="font-semibold text-sm text-gray-700 hover:text-gray-500"
+              >
+                {blogData.category}
+              </Link>
+              <Link
+                legacyBehaviour
+                href={`/blogs/${blogData.slug.toLowerCase()}`} className="block mt-2 text-2xl font-medium text-gray-900 hover:text-gray-600"
+              >
+                
+                  {blogData.blogName}
+               
+              </Link>
+              <p className="mt-2 leading-relaxed text-gray-600">
+                {blogData.blogDesc.length > 100
+                  ? `${blogData.blogDesc.substring(0, 150)}...`
+                  : blogData.blogDesc}
+              </p>
+              <div className="flex items-center mt-4">
+                <a href={`/author/${blogData.author}`} className="rounded-full">
+                  <img
+                    alt={blogData.author}
+                    src="http://techypapa.com/wp-content/uploads/2023/12/cropped-claude-40x40.png"
+                    srcSet="http://techypapa.com/wp-content/uploads/2023/12/cropped-claude-80x80.png 2x"
+                    className="rounded-full"
+                    height="40"
+                    width="40"
+                    decoding="async"
+                  />
+                </a>
+                <div className="ml-3">
+                  <div className="font-bold text-black text-md">
                     <a
-                      className="rounded-lg"
-                      href={"/author/" + blogData.author}
+                      href="https://techypapa.com/author/claude-pearson/"
+                      className="hover:text-gray-700"
                     >
-                      <img
-                        alt={blogData.author}
-                        src="http://techypapa.com/wp-content/uploads/2023/12/cropped-claude-40x40.png"
-                        srcSet="http://techypapa.com/wp-content/uploads/2023/12/cropped-claude-80x80.png 2x"
-                        className="rounded-full"
-                        height="40"
-                        width="40"
-                        decoding="async"
-                      />
+                      {blogData.author}
                     </a>
-                    <div className="mx-3 font-sans">
-                      <div className="font-bold text-black text-md">
-                        <a className="hover:text-gray-700" href="https://techypapa.com/author/claude-pearson/">
-                          {blogData.author}
-                        </a>
-                      </div>
-                      <div className="-mt-1 text-sm">
-                        <div className="cs-meta-date">{blogData.date}</div>
-                      </div>
-                    </div>
+                  </div>
+                  <div className="-mt-1 text-sm">
+                    <div className="cs-meta-date">{blogData.date}</div>
                   </div>
                 </div>
-              </article>
-            ))}
-          </div>
-        </div>
+                <a
+                  href={`/blogs/${blogData.slug.toLowerCase()}`}
+                  className="hover:bg-red-500 hover:text-white text-red-600 border-2 transition-colors ease-in delay-50 ml-4 font-semibold border-gray-300 p-2 rounded-md"
+                >
+                  Read More
+                </a>
+              </div>
+            </div>
+
+            
+          </article>
+        ))}
       </section>
     </div>
   );
